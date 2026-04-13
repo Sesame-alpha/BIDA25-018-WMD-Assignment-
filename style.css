@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #2d2d2d;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Header animated gradient */
+header {
+    background: linear-gradient(270deg, #ffe0f0, #ffb6d1, #ff99bb);
+    background-size: 200% 200%;
+    animation: gradientShift 6s ease infinite;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.logo-circle {
+    width: 50px;
+    height: 50px;
+    background: #ff99bb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.clinic-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #b13e6b;
+    letter-spacing: -0.5px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 600;
+    color: #b13e6b;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #ff69b4;
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+/* Animated quote (typing effect will handle animation, but we keep fallback) */
+.animated-quote {
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ff66b2, #ff3388);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Image placeholder & hover enlarge */
+.img-placeholder {
+    width: 180px;
+    height: 180px;
+    background: #f8d3e6;
+    border-radius: 20px;
+    border: 2px dashed #ff80b3;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-placeholder:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255,128,179,0.3);
+}
+
+/* Specific hover enlarge for Pawfolio (stronger effect) */
+.pawfolio-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.pawfolio-img:hover {
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    background: #ffe4ec;
+    color: #b13e6b;
+    border-top: 1px solid #ffccdd;
+}
+
+/* Buttons */
+.btn-pink {
+    background: #ff80b3;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.btn-pink:hover {
+    background: #ff66a3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(255,128,179,0.4);
+}
+
+/* Forms */
+.form-control:focus {
+    border-color: #ff80b3;
+    box-shadow: 0 0 0 0.2rem rgba(255,128,179,0.25);
+}
+
+/* Tables */
+.table-pink thead {
+    background: #ffb6d1;
+    color: #b13e6b;
+}
+
+/* Card tilt wrapper (VanillaTilt adds perspective) */
+.service-card {
+    transition: all 0.2s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .animated-quote {
+        font-size: 1.8rem;
+    }
+    .img-placeholder {
+        width: 120px;
+        height: 120px;
+    }
+}
