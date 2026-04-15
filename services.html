@@ -3,69 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Paws Clinic – Services</title>
+    <title>Royal Paws Vet | Services & Prices</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- External custom CSS - YOU WILL CREATE THIS LATER -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <header class="sticky-top"> <!-- same header as above, omit for brevity – copy from index.html --> </header>
+<!-- HEADER (same as about page) -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm py-2">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><i class="fas fa-paw"></i> Royal Paws Vet</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="bookings.html">Bookings</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="locate.html">Locate Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="pawfolio.html">Pawfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-    <main class="container my-5">
-        <h2 class="text-center mb-4">Our Services</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card h-100 service-card" data-tilt data-tilt-scale="1.02" data-tilt-glare="true">
-                    <div class="card-body">
-                        <h3 class="text-center">🐕 Dog Services</h3>
-                        <table class="table table-bordered table-pink">
-                            <thead><tr><th>Service</th><th>Price (Pula)</th></tr></thead>
-                            <tbody>
-                                <tr><td>Wellness Exam</td><td>300</td></tr>
-                                <tr><td>Vaccination</td><td>200</td></tr>
-                                <tr><td>Dental Cleaning</td><td>500</td></tr>
-                                <tr><td>Spay/Neuter</td><td>800</td></tr>
-                                <tr><td>X-Ray</td><td>450</td></tr>
-                                <tr><td>Blood Test</td><td>350</td></tr>
-                                <tr><td>Ultrasound</td><td>600</td></tr>
-                                <tr><td>Surgery (minor)</td><td>1200</td></tr>
-                                <tr><td>Microchipping</td><td>250</td></tr>
-                                <tr><td>Grooming</td><td>400</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
+<!-- SERVICES HEADER -->
+<div class="services-header">
+    <div class="container">
+        <h1>Our Veterinary Services</h1>
+        <p>Transparent pricing & expert care for dogs and cats – in Pula (BWP)</p>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row g-4">
+        <!-- DOG SERVICES TABLE (12 services) -->
+        <div class="col-md-6">
+            <div class="price-table">
+                <div class="table-title">
+                    <i class="fas fa-dog"></i> Dog Services
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card h-100 service-card" data-tilt data-tilt-scale="1.02" data-tilt-glare="true">
-                    <div class="card-body">
-                        <h3 class="text-center">🐈 Cat Services</h3>
-                        <table class="table table-bordered table-pink">
-                            <thead><tr><th>Service</th><th>Price (Pula)</th></tr></thead>
-                            <tbody>
-                                <tr><td>Wellness Exam</td><td>250</td></tr>
-                                <tr><td>Vaccination</td><td>180</td></tr>
-                                <tr><td>Dental Cleaning</td><td>450</td></tr>
-                                <tr><td>Spay/Neuter</td><td>700</td></tr>
-                                <tr><td>X-Ray</td><td>400</td></tr>
-                                <tr><td>Blood Test</td><td>300</td></tr>
-                                <tr><td>Ultrasound</td><td>550</td></tr>
-                                <tr><td>Surgery (minor)</td><td>1100</td></tr>
-                                <tr><td>Microchipping</td><td>250</td></tr>
-                                <tr><td>Grooming</td><td>350</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <table class="table-custom">
+                    <thead>
+                        <tr><th>Service</th><th>Price (BWP)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>🐕 Wellness Checkup</td><td>280 Pula</td></tr>
+                        <tr><td>💉 Vaccination Package (core)</td><td>450 Pula</td></tr>
+                        <tr><td>🦷 Dental Cleaning</td><td>650 Pula</td></tr>
+                        <tr><td>🩸 Blood Profile + Lab</td><td>520 Pula</td></tr>
+                        <tr><td>⚕️ Spay / Neuter</td><td>950 Pula</td></tr>
+                        <tr><td>🏥 Emergency Consultation</td><td>400 Pula</td></tr>
+                        <tr><td>🐾 Parasite Control (flea/tick/worm)</td><td>320 Pula</td></tr>
+                        <tr><td>🩻 X-Ray (per view)</td><td>480 Pula</td></tr>
+                        <tr><td>💊 Prescription Medication (avg)</td><td>180 Pula</td></tr>
+                        <tr><td>🧪 Urinalysis</td><td>210 Pula</td></tr>
+                        <tr><td>❤️ Heartworm Test</td><td>390 Pula</td></tr>
+                        <tr><td>🚑 After-Hours Emergency (base fee)</td><td>850 Pula</td></tr>
+                    </tbody>
+                </table>
+                <div class="note">*Prices include VAT. Additional medication may apply.</div>
             </div>
         </div>
-    </main>
 
-    <footer class="mt-auto py-4"> <!-- same footer --> </footer>
+        <!-- CAT SERVICES TABLE (12 services) -->
+        <div class="col-md-6">
+            <div class="price-table">
+                <div class="table-title">
+                    <i class="fas fa-cat"></i> Cat Services
+                </div>
+                <table class="table-custom">
+                    <thead>
+                        <tr><th>Service</th><th>Price (BWP)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>🐈 Wellness Checkup</td><td>250 Pula</td></tr>
+                        <tr><td>💉 FVRCP Vaccination</td><td>380 Pula</td></tr>
+                        <tr><td>🦷 Dental Cleaning (feline)</td><td>590 Pula</td></tr>
+                        <tr><td>🩸 Senior Blood Panel</td><td>550 Pula</td></tr>
+                        <tr><td>⚕️ Spay / Neuter (cat)</td><td>750 Pula</td></tr>
+                        <tr><td>🏥 Emergency Consultation</td><td>380 Pula</td></tr>
+                        <tr><td>🐛 Deworming (full course)</td><td>260 Pula</td></tr>
+                        <tr><td>🧪 FIV/FeLV Test</td><td>440 Pula</td></tr>
+                        <tr><td>💊 Prescription Diet (per bag)</td><td>220 Pula</td></tr>
+                        <tr><td>🩻 X-Ray (cat – per view)</td><td>450 Pula</td></tr>
+                        <tr><td>💧 Subcutaneous Fluids (with visit)</td><td>310 Pula</td></tr>
+                        <tr><td>✂️ Nail Trim + Ear Clean</td><td>150 Pula</td></tr>
+                    </tbody>
+                </table>
+                <div class="note">*Prices include VAT. Additional medication may apply.</div>
+            </div>
+        </div>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
-    <script src="js/script.js"></script>
+    <!-- Optional booking call-to-action -->
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+            <a href="bookings.html" class="btn btn-booking">Book an Appointment →</a>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5><i class="fas fa-paw"></i> Royal Paws Vet Care</h5>
+                <p>Compassionate care in Gaborone and beyond.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="bookings.html">Book an Appointment</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact</h5>
+                <p><i class="fas fa-phone-alt"></i> +267 71 234 567<br>
+                <i class="fas fa-envelope"></i> hello@royalpaws.co.bw<br>
+                <i class="fas fa-map-marker-alt"></i> Plot 123, Fairgrounds, Gaborone</p>
+            </div>
+        </div>
+        <div class="text-center pt-3">
+            <small>&copy; 2026 Royal Paws Veterinary Clinic. All rights reserved.</small>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+    </html>
