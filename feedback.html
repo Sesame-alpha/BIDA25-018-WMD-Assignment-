@@ -1,32 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <!-- same head --> </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Royal Paws Veterinary Clinic | Feedback Page</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
-    <header> <!-- same header --> </header>
-    <main class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-md-7">
-                <h2 class="text-center mb-3">We value your feedback!</h2>
-                <p class="text-center mb-4">Please let us know about your experience.</p>
+
+<!-- Header (same as above) -->
+<header class="sticky-top">... same header ...</header>
+
+<main class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-7">
+            <div class="card p-4 p-md-5 shadow-lg border-0 rounded-4">
+                <h2 class="text-center mb-3 fw-bold text-pink">Feedback Form</h2>
+                <p class="text-center mb-4">We value your feedback! Please let us know about your experience.</p>
                 <form id="feedbackForm">
-                    <div class="mb-3"><label class="form-label">Full Name(s)</label><input type="text" id="fbName" class="form-control" required></div>
-                    <div class="mb-3"><label class="form-label">Email</label><input type="email" id="fbEmail" class="form-control" required></div>
                     <div class="mb-3">
-                        <label class="form-label">Rating</label><br>
-                        <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="rating" value="Excellent"> Excellent</div>
-                        <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="rating" value="Fair"> Fair</div>
-                        <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="rating" value="Good"> Good</div>
-                        <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="rating" value="Poor"> Poor</div>
+                        <label class="form-label fw-bold">Full Name(s)</label>
+                        <input type="text" id="fbName" class="form-control" required>
                     </div>
-                    <div class="mb-3"><label class="form-label">Feedback message</label><textarea id="fbMessage" rows="4" class="form-control" required></textarea></div>
-                    <div class="text-center"><button type="reset" class="btn btn-secondary me-3">Clear Form</button><button type="submit" class="btn btn-pink">Submit Form</button></div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Email</label>
+                        <input type="email" id="fbEmail" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Rating</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rating" value="Excellent"> Excellent
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rating" value="Fair"> Fair
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rating" value="Good"> Good
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rating" value="Poor"> Poor
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Feedback message</label>
+                        <textarea id="fbMessage" rows="4" class="form-control" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="reset" class="btn btn-outline-pink me-3">Clear Form</button>
+                        <button type="submit" class="btn btn-pink">Submit Form</button>
+                    </div>
                 </form>
+                <!-- Pleasant acknowledgment message -->
+                <div id="feedbackMessage" class="alert alert-success text-center mt-4" style="display: none;">
+                    <i class="fas fa-heart me-2"></i> Thank you for your feedback! We truly appreciate it. ❤️
+                </div>
             </div>
         </div>
-    </main>
-    <footer> <!-- same footer --> </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
-    <script src="js/script.js"></script>
+    </div>
+</main>
+
+<!-- Footer (same) -->
+<footer class="mt-auto py-4">... same footer ...</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+<script src="js/script.js"></script>
+<script>
+    const feedbackForm = document.getElementById('feedbackForm');
+    const feedbackMessage = document.getElementById('feedbackMessage');
+    feedbackForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('fbName').value;
+        const email = document.getElementById('fbEmail').value;
+        const ratingElem = document.querySelector('input[name="rating"]:checked');
+        const rating = ratingElem ? ratingElem.value : 'Not given';
+        const message = document.getElementById('fbMessage').value;
+        const subject = `Feedback from ${name}`;
+        const body = `Name: ${name}\nEmail: ${email}\nRating: ${rating}\nMessage: ${message}`;
+        window.location.href = `mailto:royalpawsvet@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        feedbackMessage.style.display = 'block';
+        confetti({ particleCount: 200, spread: 80, origin: { y: 0.6 } });
+        feedbackForm.reset();
+        feedbackMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+</script>
 </body>
 </html>
