@@ -3,66 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Paws Clinic – About Us</title>
+    <title>Royal Paws Vet Care | About Us</title>
+    <!-- Bootstrap 5 CSS (framework only) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- External custom CSS - YOU WILL CREATE THIS LATER -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts (optional, you can keep or move to CSS later) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <header class="sticky-top">
-        <div class="container">
-            <div class="row align-items-center py-3">
-                <div class="col-auto"><div class="logo-circle">🐾</div></div>
-                <div class="col"><span class="clinic-name">Royal Paws Clinic</span></div>
-                <div class="col-auto">
-                    <nav class="navbar navbar-expand-lg">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="mainNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                                <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
-                                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                                <li class="nav-item"><a class="nav-link" href="bookings.html">Bookings</a></li>
-                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                                <li class="nav-item"><a class="nav-link" href="locate.html">Locate Us</a></li>
-                                <li class="nav-item"><a class="nav-link" href="pawfolio.html">Pawfolio</a></li>
-                                <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
+<!-- HEADER (consistent across all pages) -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm py-2">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <i class="fas fa-paw"></i> Royal Paws Vet
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="bookings.html">Bookings</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="locate.html">Locate Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="pawfolio.html">Pawfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+            </ul>
         </div>
-    </header>
+    </div>
+</nav>
 
-    <main class="container my-5">
+<!-- ABOUT CONTENT (matches wireframe: clinic history, mission, vision, two buttons) -->
+<section class="about-hero">
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <h2 class="text-center mb-4">About Us</h2>
-                <div class="p-4 bg-light rounded shadow-sm">
-                    <p><strong>Founded in 2023</strong>, Royal Paws Clinical Vet provides <em>essential compassionate care</em> for dogs and cats.</p>
-                    <p><em>Our mission</em> is to treat every pet like family.</p>
-                    <p><em>Our vision</em> is to be the most trusted and unique vet clinic in Gaborone.</p>
-                </div>
-                <div class="text-center mt-4">
-                    <a href="index.html" class="btn btn-pink me-3">Home Page</a>
-                    <a href="services.html" class="btn btn-pink">View Our Services</a>
+            <div class="col-lg-10">
+                <div class="about-card">
+                    <h1>🐾 Our Story</h1>
+                    <p class="lead">Royal Paws Veterinary Clinic was founded in Gaborone with a simple belief: every pet deserves compassionate, high‑quality care. What started as a small mobile clinic has grown into a trusted animal hospital, blending modern medicine with a warm, personal touch.</p>
+                    <hr>
+                    <p>Over the past decade, we’ve served thousands of happy pets – from playful puppies to wise senior cats. Our team of dedicated veterinarians and nurses continues to learn, using the latest techniques to keep your furry family members healthy.</p>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</section>
 
-    <footer class="mt-auto py-4">
-        <div class="container text-center">
-            <p class="mb-1">Royal Paws Clinic | Gaborone, Botswana | Tel: +267 3445 490 | 2026 All rights reserved.</p>
-            <p class="mb-0">Email: royalpawsvet@gmail.com</p>
+<div class="container my-5">
+    <!-- Mission & Vision side by side -->
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="mission-vision">
+                <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                <p>To provide accessible, fear‑free veterinary care that enhances the lives of pets and peace of mind for their owners. We combine expertise with empathy, ensuring every visit is stress‑free and transparent.</p>
+            </div>
         </div>
-    </footer>
+        <div class="col-md-6">
+            <div class="mission-vision">
+                <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                <p>To be Botswana’s most trusted veterinary partner – where innovation meets tradition, and every pet is treated like royalty. We envision a future where no pet goes without quality healthcare.</p>
+            </div>
+        </div>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <!-- Additional history block -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="about-card">
+                <h3>📜 Our Journey</h3>
+                <p>Founded by Dr. Sesame Dithupa in 2015, Royal Paws started as a one‑person practice. Today we have six vets, a modern surgical suite, and an in‑house laboratory. We are proudly locally owned and deeply connected to the Gaborone community – sponsoring pet adoption events and offering free wellness talks in local schools.</p>
+                <p>We believe in transparent pricing, open communication, and treating every patient as if they were our own. <strong>#RoyalCareForRoyalPets</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TWO BUTTONS: Back to Home + View Our Services (exactly as wireframe) -->
+    <div class="row mt-4 mb-5">
+        <div class="col-12 text-center">
+            <a href="index.html" class="btn btn-outline-paws"> Back to Home</a>
+            <a href="services.html" class="btn btn-paws"> View Our Services</a>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5><i class="fas fa-paw"></i> Royal Paws Vet Care</h5>
+                <p>Compassionate care in Gaborone and beyond.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="bookings.html">Book an Appointment</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact</h5>
+                <p><i class="fas fa-phone-alt"></i> +267 71 234 567<br>
+                <i class="fas fa-envelope"></i> hello@royalpaws.co.bw<br>
+                <i class="fas fa-map-marker-alt"></i> Plot 123, Fairgrounds, Gaborone</p>
+            </div>
+        </div>
+        <div class="text-center pt-3">
+            <small>&copy; 2026 Royal Paws Veterinary Clinic. All rights reserved.</small>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+            </html>     
