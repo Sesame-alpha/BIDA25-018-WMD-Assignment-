@@ -1,11 +1,16 @@
 # BIDA25-018
-This is a multi-page website for a veterinary company Royal Paws,the site features service listings with their prices,contact forms,location demographics and pet care information.
-It is designed and developed for a school assignment.
-The pages include:
-1. Home Page
-2. Our Services
-3. Bookings
-4. About Us
-5. Pawfolio
-6. Contact Us
-7. Locate Us
+# Royal Paws Veterinary Clinic
+
+This website serves as the online presence for Royal Paws Veterinary Clinic in Gaborone, Botswana. It provides pet owners with easy access to clinic information, services, online booking, and client feedback. The site aims to build trust through a gallery of past patients (Pawfolio), showcase professional care, and offer a seamless mobile‑friendly experience.
+Its a demo website develoed for a school project.
+
+## Pages
+
+Home – Animated welcome quote, image gallery, call‑to‑action, and “Why Choose Us” section.
+About Us – Clinic history, mission, and vision.
+Services – Tables of dog and cat services with prices.
+Bookings – Dynamic form to select pet type and service, sends email confirmation.
+Contact Us – Emergency doctor numbers and general enquiry contacts.
+Locate Us – Address, Google Maps embed, and trading hours.
+Pawfolio – 3×3 image gallery of past patients with modal lightbox and pet stories.
+Feedback – Rating form to collect client feedback with acknowledgment message.
