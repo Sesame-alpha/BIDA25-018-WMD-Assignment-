@@ -1,51 +1,85 @@
-// Typing animation on home page
+// ========== TYPING ANIMATION (HOME PAGE) ==========
 if (document.getElementById('typed-quote')) {
     new Typed('#typed-quote', {
-        strings: ['"Where every paw gets royal care."', '"Healthy pets, happy hearts."', '"Your pet deserves royalty."'],
+        strings: [
+            '"Where every paw gets royal care."',
+            '"Healthy pets, happy hearts."',
+            '"Compassionate care you can trust."'
+        ],
         typeSpeed: 50,
         backSpeed: 30,
         loop: true
     });
 }
 
-// VanillaTilt for service cards
-if (typeof VanillaTilt !== 'undefined') {
-    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
-        max: 25,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.5,
+// ========== CONFETTI ON "EXPLORE SERVICES" BUTTON (HOME) ==========
+const exploreBtn = document.getElementById('exploreBtn');
+if (exploreBtn) {
+    exploreBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        confetti({ particleCount: 200, spread: 100, origin: { y: 0.6 } });
+        setTimeout(() => {
+            window.location.href = exploreBtn.getAttribute('href');
+        }, 300);
     });
 }
 
-// Helper function to send email via mailto
-function sendEmail(to, subject, body) {
-    const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
+// ========== VANILLA TILT (SERVICES CARDS, IF ANY) ==========
+if (typeof VanillaTilt !== 'undefined') {
+    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+        max: 20,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.4,
+    });
 }
 
-// Booking form handler
+// ========== BOOKING FORM (DYNAMIC SERVICE DROPDOWN + MESSAGE) ==========
 const bookingForm = document.getElementById('bookingForm');
 if (bookingForm) {
+    const petTypeSelect = document.getElementById('petType');
+    const serviceSelect = document.getElementById('service');
+    const bookingMessage = document.getElementById('bookingMessage');
+
+    const dogServices = ["Wellness Exam", "Vaccination", "Dental Cleaning", "Spay/Neuter", "X-Ray", "Blood Test", "Ultrasound", "Surgery (minor)", "Microchipping", "Grooming"];
+    const catServices = ["Wellness Exam", "Vaccination", "Dental Cleaning", "Spay/Neuter", "X-Ray", "Blood Test", "Ultrasound", "Surgery (minor)", "Microchipping", "Grooming"];
+
+    function updateServices() {
+        const services = petTypeSelect.value === 'dog' ? dogServices : catServices;
+        serviceSelect.innerHTML = '';
+        services.forEach(service => {
+            const option = document.createElement('option');
+            option.value = service;
+            option.textContent = service;
+            serviceSelect.appendChild(option);
+        });
+    }
+
+    petTypeSelect.addEventListener('change', updateServices);
+    updateServices();
+
     bookingForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const fullName = document.getElementById('fullName').value;
         const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
-        const service = document.getElementById('service').value;
-
-        const subject = `New Booking Request from ${fullName}`;
-        const body = `Full Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nService Requested: ${service}`;
-        sendEmail('royalpawsvet@gmail.com', subject, body);
-        alert('Thank you! Your booking request has been sent. We will reply soon.');
+        const petType = petTypeSelect.options[petTypeSelect.selectedIndex]?.text;
+        const service = serviceSelect.value;
+        const subject = `Booking Request from ${fullName}`;
+        const body = `Full Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nPet Type: ${petType}\nService: ${service}`;
+        window.location.href = `mailto:royalpawsvet@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        if (bookingMessage) bookingMessage.style.display = 'block';
         confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-        this.reset();
+        bookingForm.reset();
+        updateServices();
+        if (bookingMessage) bookingMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
 }
 
-// Feedback form handler
+// ========== FEEDBACK FORM ==========
 const feedbackForm = document.getElementById('feedbackForm');
 if (feedbackForm) {
+    const feedbackMessage = document.getElementById('feedbackMessage');
     feedbackForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const name = document.getElementById('fbName').value;
@@ -53,12 +87,40 @@ if (feedbackForm) {
         const ratingElem = document.querySelector('input[name="rating"]:checked');
         const rating = ratingElem ? ratingElem.value : 'Not given';
         const message = document.getElementById('fbMessage').value;
-
         const subject = `Feedback from ${name}`;
         const body = `Name: ${name}\nEmail: ${email}\nRating: ${rating}\nMessage: ${message}`;
-        sendEmail('royalpawsvet@gmail.com', subject, body);
-        alert('Thank you for your feedback! We appreciate it.');
+        window.location.href = `mailto:royalpawsvet@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        if (feedbackMessage) feedbackMessage.style.display = 'block';
         confetti({ particleCount: 200, spread: 80, origin: { y: 0.6 } });
-        this.reset();
+        feedbackForm.reset();
+        if (feedbackMessage) feedbackMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
 }
+
+// ========== PAWFOLIO MODAL (LIGHTBOX) ==========
+const imageModal = document.getElementById('imageModal');
+if (imageModal) {
+    imageModal.addEventListener('show.bs.modal', function(event) {
+        const trigger = event.relatedTarget;
+        const imgSrc = trigger.getAttribute('data-img');
+        const caption = trigger.getAttribute('data-caption');
+        const modalImg = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        if (modalImg) modalImg.src = imgSrc;
+        if (modalCaption) modalCaption.textContent = caption;
+    });
+}
+
+// ========== SMOOTH SCROLL FOR INTERNAL LINKS (optional) ==========
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href !== "#" && href !== "") {
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    });
+});
