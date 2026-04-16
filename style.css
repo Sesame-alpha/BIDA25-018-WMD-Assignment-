@@ -1,4 +1,4 @@
-/* ========== GLOBAL STYLES ========== */
+/* ========== GLOBAL RESET & ROBUSTNESS ========== */
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +6,21 @@
 }
 
 body {
+    min-width: 320px;               /* never smaller than 320px */
     font-family: 'Inter', sans-serif;
-    background: #ffffff;   /* white background */
+    background: #ffffff;
     color: #2d2d2d;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     animation: fadeIn 0.5s ease;
+}
+
+/* All images are responsive by default */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 @keyframes fadeIn {
@@ -24,17 +32,33 @@ html {
     scroll-behavior: smooth;
 }
 
-/* ========== TYPOGRAPHY & LINKS ========== */
 a {
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
+/* ========== TYPOGRAPHY & COLORS ========== */
 .text-pink {
     color: #ff4d88;
 }
 .text-pink-dark {
     color: #b13e6b;
+}
+.bg-pink-light {
+    background-color: #ffe0f0;
+}
+/* ========== LOGO SIZING ========== */
+.logo-img {
+    width: 120px;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        width: 80px;
+    }
 }
 
 /* ========== HEADER & NAVIGATION ========== */
@@ -51,13 +75,6 @@ header {
     100% { background-position: 0% 50%; }
 }
 
-.logo-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
 .clinic-name {
     font-size: 1.6rem;
     font-weight: 800;
@@ -65,20 +82,19 @@ header {
     letter-spacing: -0.5px;
 }
 
-.navbar-nav .nav-link {
+/* Override Bootstrap nav-link */
+header .navbar-nav .nav-link {
     font-weight: 600;
     color: #a1325e;
     transition: all 0.3s ease;
 }
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
+header .navbar-nav .nav-link:hover,
+header .navbar-nav .nav-link.active {
     color: #ff3388;
     text-decoration: underline;
     transform: scale(1.05);
 }
 
-/* Navbar toggler (mobile) */
 .navbar-toggler {
     border: none;
     background-color: #ffb6d1;
@@ -88,7 +104,7 @@ header {
 }
 
 /* ========== BUTTONS ========== */
-.btn-pink {
+.btn.btn-pink {
     background: #ff4d88;
     color: white;
     border: none;
@@ -96,16 +112,14 @@ header {
     padding: 12px 28px;
     font-weight: 700;
     transition: all 0.3s ease;
-    display: inline-block;
 }
-.btn-pink:hover {
+.btn.btn-pink:hover {
     background: #e6005c;
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(230,0,92,0.3);
-    color: white;
 }
 
-.btn-outline-pink {
+.btn.btn-outline-pink {
     background: transparent;
     border: 2px solid #ff80b3;
     color: #b13e6b;
@@ -114,13 +128,13 @@ header {
     font-weight: 600;
     transition: 0.3s;
 }
-.btn-outline-pink:hover {
+.btn.btn-outline-pink:hover {
     background: #ff80b3;
     color: white;
     transform: translateY(-2px);
 }
 
-/* ========== HERO SECTION (HOME) ========== */
+/* ========== HERO SECTION ========== */
 .hero-gradient {
     background: linear-gradient(135deg, #ffffff 0%, #ffe6f0 100%);
     border-radius: 30px;
@@ -137,7 +151,7 @@ header {
     color: transparent;
 }
 
-/* Home page images */
+/* ========== HOME PAGE IMAGES ========== */
 .home-img {
     width: 180px;
     height: 180px;
@@ -150,7 +164,7 @@ header {
     box-shadow: 0 15px 25px rgba(0,0,0,0.15);
 }
 
-/* ========== ICON HOVER (Why Choose Us) ========== */
+/* ========== ICONS HOVER ========== */
 .fa-2x {
     transition: transform 0.3s ease;
 }
@@ -158,7 +172,7 @@ header {
     transform: scale(1.2);
 }
 
-/* ========== FORMS & CARDS ========== */
+/* ========== CARDS ========== */
 .card {
     border: none;
     border-radius: 24px;
@@ -169,6 +183,7 @@ header {
     transform: translateY(-5px);
 }
 
+/* ========== FORMS ========== */
 .form-control, .form-select {
     border: 1px solid #ffb6d1;
     border-radius: 12px;
@@ -180,7 +195,7 @@ header {
     box-shadow: 0 0 0 0.25rem rgba(255,102,163,0.25);
 }
 
-/* ========== TABLES (Services page) ========== */
+/* ========== TABLES ========== */
 .table-pink thead {
     background: #ffb6d1;
     color: #a1325e;
@@ -188,14 +203,11 @@ header {
 .table-pink tbody tr:hover {
     background: #ffe0f0;
 }
-.table-bordered {
-    border: 1px solid #dee2e6;  /* gray/black border */
-}
-.table-bordered th, .table-bordered td {
+.table-bordered, .table-bordered th, .table-bordered td {
     border: 1px solid #dee2e6;
 }
 
-/* ========== PAWFOLIO PAGE ========== */
+/* ========== PAWFOLIO ========== */
 .pawfolio-img {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -209,7 +221,7 @@ header {
     box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
-/* Modal styling */
+/* ========== MODAL ========== */
 .modal-content {
     border-radius: 15px;
     background-color: #fff9fb;
@@ -218,7 +230,6 @@ header {
     max-height: 70vh;
     width: auto;
     margin: 0 auto;
-    object-fit: cover;
 }
 .modal-header .btn-close {
     background-color: #ffb6d1;
@@ -227,7 +238,7 @@ header {
     padding: 8px;
 }
 
-/* ========== LOCATE US PAGE ========== */
+/* ========== LOCATE US ========== */
 .trading-hours {
     background: #ffe0f0;
     border-radius: 20px;
@@ -245,6 +256,7 @@ footer {
     color: #a1325e;
     border-top: 2px solid #ffb6d1;
     font-size: 0.95rem;
+    margin-top: auto;
 }
 .social-icon {
     display: inline-block;
@@ -278,13 +290,8 @@ footer {
     }
     footer {
         font-size: 0.85rem;
-        text-align: center;
     }
     .hero-gradient {
         padding: 20px 15px;
     }
-    .btn-pink, .btn-outline-pink {
-        padding: 8px 20px;
-        font-size: 0.9rem;
-    }
-    
+                                }
