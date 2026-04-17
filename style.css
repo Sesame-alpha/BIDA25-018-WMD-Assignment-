@@ -41,16 +41,16 @@ a {
 
 /* ========== COLOR VARIABLES (PINK SHADES) ========== */
 .text-pink {
-    color: #FB32A7;
+    color: #ff65bf;
 }
 .text-pink-light {
     color: #FD8CCE;
 }
 .bg-pink-main {
-    background-color: #FC62BC;
+    background-color: #ff9bd5;
 }
 .bg-pink-light {
-    background-color: #FD8CCE;
+    background-color: #ff8fd0;
 }
 
 /* ========== LOGO ========== */
@@ -68,7 +68,7 @@ a {
 
 /* ========== HEADER (PINK GRADIENT) ========== */
 header {
-    background: linear-gradient(270deg, #FD8CCE, #FC62BC, #FB32A7);
+    background: linear-gradient(270deg, #fd72c3, #ff47b2, #ff89ce);
     background-size: 200% 200%;
     animation: gradientShift 6s ease infinite;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -83,7 +83,7 @@ header {
 .clinic-name {
     font-size: 1.6rem;
     font-weight: 700;
-    color: #000000;
+    color: #f70499;
     letter-spacing: -0.5px;
 }
 
@@ -95,14 +95,14 @@ header .navbar-nav .nav-link {
 }
 header .navbar-nav .nav-link:hover,
 header .navbar-nav .nav-link.active {
-    color: #FB32A7 !important;
+    color: #b6056c !important;
     text-decoration: underline;
     transform: scale(1.05);
 }
 
 .navbar-toggler {
     border: none;
-    background-color: #FD8CCE;
+    background-color: #fd8ecf;
 }
 .navbar-toggler-icon {
     filter: invert(1);
@@ -141,7 +141,7 @@ header .navbar-nav .nav-link.active {
 
 /* ========== HERO GRADIENT (CENTRED BACKGROUND FOR ALL PAGES) ========== */
 .hero-gradient {
-    background: linear-gradient(135deg, #ffffff 0%, #FD8CCE 20%, #FC62BC 80%);
+    background: linear-gradient(135deg, #ffffff 0%, #FD8CCE 20%, #e989c1 80%);
     border-radius: 30px;
     padding: 40px 20px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
@@ -163,7 +163,7 @@ header .navbar-nav .nav-link.active {
 .animated-quote {
     font-size: 2.8rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #FB32A7, #FC62BC);
+    background: linear-gradient(135deg, #ff74dc, #ff5fbc);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -185,7 +185,7 @@ header .navbar-nav .nav-link.active {
 /* ========== ICONS HOVER ========== */
 .fa-2x {
     transition: transform 0.3s ease;
-    color: #FB32A7;
+    color: #ff65bf;
 }
 .fa-2x:hover {
     transform: scale(1.2);
