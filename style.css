@@ -1,0 +1,354 @@
+/* ========== GOOGLE FONTS ========== */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* ========== GLOBAL RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    font-family: 'Quicksand', sans-serif;
+    background: #ffffff;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fadeIn 0.5s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* ========== COLOR VARIABLES ========== */
+.text-pink {
+    color: #FF69B4;
+}
+.text-pink-dark {
+    color: #FF33AA;
+}
+.bg-pink-main {
+    background-color: #FF69B4;
+}
+.bg-pink-light {
+    background-color: #FFB2D0;
+}
+
+/* ========== LOGO (LARGER) ========== */
+.logo-img {
+    width: 140px;        /* increased from 120px */
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+@media (max-width: 480px) {
+    .logo-img {
+        width: 100px;
+    }
+}
+
+/* ========== HEADER & NAVIGATION (POWDER PINK BACKGROUND) ========== */
+header {
+    background: #FFB2D0;  /* solid powder pink */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.clinic-name {
+    font-size: 1.8rem;    /* larger */
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.5px;
+}
+
+/* Navigation links – larger and black */
+header .navbar-nav .nav-link {
+    font-size: 1.1rem;    /* bigger */
+    font-weight: 600;
+    color: #000000 !important;
+    transition: all 0.3s ease;
+}
+header .navbar-nav .nav-link:hover,
+header .navbar-nav .nav-link.active {
+    color: #FF69B4 !important;  /* hot pink on hover */
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+.navbar-toggler {
+    border: none;
+    background-color: #FFB2D0;
+}
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* ========== BUTTONS (using new pinks) ========== */
+.btn.btn-pink {
+    background: #FF69B4;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 28px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.btn.btn-pink:hover {
+    background: #FF33AA;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn.btn-outline-pink {
+    background: transparent;
+    border: 2px solid #FF69B4;
+    color: #000000;
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.btn.btn-outline-pink:hover {
+    background: #FFB2D0;
+    color: #000000;
+    transform: translateY(-2px);
+}
+
+/* ========== HERO GRADIENT (subtle pink gradient, white text for quote) ========== */
+.hero-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, #FFB2D0 50%, #FF69B4 100%);
+    border-radius: 30px;
+    padding: 40px 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    animation: slideUpFade 0.6s ease-out forwards;
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animated quote – white text with soft shadow */
+.animated-quote {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffffff;           /* white text */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 1rem;
+}
+
+/* ========== HOME PAGE IMAGES ========== */
+.home-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.home-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+/* ========== ICONS HOVER ========== */
+.fa-2x {
+    transition: transform 0.3s ease;
+    color: #FF69B4;
+}
+.fa-2x:hover {
+    transform: scale(1.2);
+}
+
+/* ========== CARDS (STAGGERED ANIMATION) ========== */
+.card, .service-card, .pawfolio-img, .home-img {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    border: none;
+    border-radius: 24px;
+    box-shadow: 0 8px 20px rgba(255,105,180,0.1);
+    transition: transform 0.2s;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ========== FORMS ========== */
+.form-control, .form-select {
+    border: 1px solid #FFB2D0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 1rem;
+}
+.form-control:focus, .form-select:focus {
+    border-color: #FF69B4;
+    box-shadow: 0 0 0 0.25rem rgba(255,105,180,0.25);
+}
+
+/* ========== TABLES ========== */
+.table-pink thead {
+    background: #FFB2D0;
+    color: #000000;
+}
+.table-pink tbody tr {
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.table-pink tbody tr:hover {
+    background: #ffe0f0;
+    transform: scale(1.01);
+}
+.table-bordered, .table-bordered th, .table-bordered td {
+    border: 1px solid #dee2e6;
+}
+
+/* ========== PAWFOLIO ========== */
+.pawfolio-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.pawfolio-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* ========== MODAL ========== */
+.modal-content {
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+.modal-body img {
+    max-height: 70vh;
+    width: auto;
+    margin: 0 auto;
+}
+.modal-header .btn-close {
+    background-color: #FFB2D0;
+    border-radius: 50%;
+    opacity: 1;
+    padding: 8px;
+}
+
+/* ========== LOCATE US ========== */
+.trading-hours {
+    background: #FFB2D0;
+    border-radius: 20px;
+    padding: 1.5rem;
+}
+.map-container {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ========== FOOTER (SAME POWDER PINK AS NAVBAR) ========== */
+footer {
+    background: #FFB2D0;     /* same powder pink */
+    color: #000000;
+    border-top: 2px solid #FF69B4;
+    font-size: 0.95rem;
+    margin-top: auto;
+}
+.social-icon {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background: #ffffff;
+    color: #FF69B4;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    margin: 0 5px;
+    transition: all 0.3s;
+}
+.social-icon:hover {
+    background: #FF69B4;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ========== PULSE ANIMATION FOR MAIN BUTTON ========== */
+.btn-pink {
+    animation: gentlePulse 2s infinite ease-in-out;
+}
+@keyframes gentlePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255,105,180,0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255,105,180,0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255,105,180,0);
+    }
+}
+.btn-pink:hover {
+    animation: none;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .animated-quote {
+        font-size: 1.8rem;
+    }
+    .home-img {
+        width: 120px;
+        height: 120px;
+    }
+    .clinic-name {
+        font-size: 1.4rem;
+    }
+    footer {
+        font-size: 0.85rem;
+    }
+    .hero-gradient {
+        padding: 20px 15px;
+    }
+}
