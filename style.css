@@ -78,7 +78,7 @@ header {
 .clinic-name {
     font-size: 1.6rem;
     font-weight: 800;
-    color: #a1325e;
+    color: #000000;
     letter-spacing: -0.5px;
 }
 
@@ -204,7 +204,7 @@ header .navbar-nav .nav-link.active {
     background: #ffe0f0;
 }
 .table-bordered, .table-bordered th, .table-bordered td {
-    border: 1px solid #dee2e6;
+    border: 1px solid #000000;
 }
 
 /* ========== PAWFOLIO ========== */
