@@ -185,7 +185,7 @@ header .navbar-nav .nav-link.active {
 /* ========== ICONS HOVER ========== */
 .fa-2x {
     transition: transform 0.3s ease;
-    color: #ff65bf;
+    color: #000000;
 }
 .fa-2x:hover {
     transform: scale(1.2);
@@ -232,7 +232,7 @@ header .navbar-nav .nav-link.active {
     font-size: 1rem;
 }
 .form-control:focus, .form-select:focus {
-    border-color: #FB32A7;
+    border-color: #fa70c0;
     box-shadow: 0 0 0 0.25rem rgba(251,50,167,0.25);
 }
 
@@ -277,7 +277,7 @@ header .navbar-nav .nav-link.active {
     margin: 0 auto;
 }
 .modal-header .btn-close {
-    background-color: #FD8CCE;
+    background-color: #ff86cd;
     border-radius: 50%;
     opacity: 1;
     padding: 8px;
@@ -285,7 +285,7 @@ header .navbar-nav .nav-link.active {
 
 /* ========== LOCATE US ========== */
 .trading-hours {
-    background: #FD8CCE20;
+    background: #ffffff20;
     border-radius: 20px;
     padding: 1.5rem;
 }
@@ -299,7 +299,7 @@ header .navbar-nav .nav-link.active {
 footer {
     background: #FC62BC20;
     color: #000000;
-    border-top: 2px solid #FD8CCE;
+    border-top: 2px solid #fa85c9;
     font-size: 0.95rem;
     margin-top: auto;
 }
@@ -307,7 +307,7 @@ footer {
     display: inline-block;
     width: 36px;
     height: 36px;
-    background: #FD8CCE;
+    background: #ff8ed0;
     color: #000000;
     border-radius: 50%;
     text-align: center;
@@ -316,7 +316,7 @@ footer {
     transition: all 0.3s;
 }
 .social-icon:hover {
-    background: #FB32A7;
+    background: #000000;
     color: white;
     transform: translateY(-3px);
 }
