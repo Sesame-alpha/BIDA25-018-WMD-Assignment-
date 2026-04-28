@@ -53,7 +53,7 @@ a {
     background-color: #FFB2D0;
 }
 
-/* ========== LOGO – fixed height, no distortion ========== */
+/* ========== LOGO ========== */
 .logo-img {
     height: 60px;
     width: auto;
@@ -74,15 +74,15 @@ header {
 
 /* Clinic name – much larger */
 .clinic-name {
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     font-weight: 800;
     color: #000000;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.4px;
 }
 
-/* Navigation links – much larger and black */
+/* Navigation links  */
 header .navbar-nav .nav-link {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: #000000 !important;
     transition: all 0.3s ease;
@@ -280,7 +280,7 @@ header .navbar-nav .nav-link.active {
 
 /* ========== LOCATE US ========== */
 .trading-hours {
-    background: #FFB2D0;
+    background: #ffffff;
     border-radius: 20px;
     padding: 1.5rem;
 }
@@ -290,7 +290,7 @@ header .navbar-nav .nav-link.active {
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-/* ========== FOOTER – same powder pink as header ========== */
+/* ========== FOOTER –  ========== */
 footer {
     background: #FFB2D0;
     color: #000000;
